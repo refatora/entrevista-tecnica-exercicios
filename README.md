@@ -44,6 +44,13 @@ npm test
 
 Isso iniciará o Vitest no modo de observação, que executará os testes automaticamente sempre que um arquivo for alterado.
 
-## Licença
+## Organização do Projeto
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+O código-fonte deste projeto está localizado no diretório `src/`. Este diretório é organizado em subdiretórios que representam os tópicos que abordaremos. Cada subdiretório de tópico é prefixado com um número sequencial, indicando a ordem sugerida para os estudos.
+
+Dentro de cada diretório de tópico, você encontrará os arquivos dos exercícios. Estes também são prefixados com um número sequencial, seguido pelo nome do exercício.
+
+Cada exercício é composto por dois arquivos:
+
+- `*.ts`: Contém o enunciado do exercício e a implementação da solução.
+- `*.test.ts`: Contém os testes para validar a solução.
