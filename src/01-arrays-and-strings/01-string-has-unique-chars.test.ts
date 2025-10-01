@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { hasDuplicateCharsWithArray, hasDuplicateCharsWithSet } from './exercicio-01'
+import { hasDuplicateCharsWithArray, hasDuplicateCharsWithSet } from './01-string-has-unique-chars'
 
 describe('exercicio-01: Determina se uma string contém caracteres duplicados', () => {
   it.each(['  ', 'aa', 'abab', '1213', 'abba', '😊😊'])(
