@@ -1,20 +1,20 @@
 import { describe, expect, it } from 'vitest'
-import { hasDuplicateCharsWithArray, hasDuplicateCharsWithSet } from './01-string-has-unique-chars'
+import { hasUniqueCharsWithArray, hasUniqueCharsWithSet } from './01-string-has-unique-chars'
 
-describe('exercicio-01: Determina se uma string contém caracteres duplicados', () => {
-  it.each(['  ', 'aa', 'abab', '1213', 'abba', '😊😊'])(
-    'retorne true quando a string contém caracteres duplicados: [%s]',
+describe('exercicio-01: Determina se uma string contém apenas caracteres únicos', () => {
+  it.each(['', ' ', 'a', 'abc', '123', 'aAbB'])(
+    'retorne true quando a string contém apenas caracteres únicos: [%s]',
     (inputString) => {
-      expect(hasDuplicateCharsWithSet(inputString)).toBe(true)
-      expect(hasDuplicateCharsWithArray(inputString)).toBe(true)
+      expect(hasUniqueCharsWithSet(inputString)).toBe(true)
+      expect(hasUniqueCharsWithArray(inputString)).toBe(true)
     },
   )
 
-  it.each(['', ' ', 'a', 'abc', '123', 'aAbB'])(
-    'retorne false quando a string contém apenas caracteres únicos: [%s]',
+  it.each(['  ', 'aa', 'abab', '1213', 'abba', '😊😊'])(
+    'retorne false quando a string contém caracteres duplicados: [%s]',
     (inputString) => {
-      expect(hasDuplicateCharsWithSet(inputString)).toBe(false)
-      expect(hasDuplicateCharsWithArray(inputString)).toBe(false)
+      expect(hasUniqueCharsWithSet(inputString)).toBe(false)
+      expect(hasUniqueCharsWithArray(inputString)).toBe(false)
     },
   )
 
@@ -25,6 +25,6 @@ describe('exercicio-01: Determina se uma string contém caracteres duplicados', 
      * Este teste é marcado com .fails() para indicar que a falha é esperada.
      */
     const unicodeString = '😊😂'
-    expect(hasDuplicateCharsWithArray(unicodeString)).toBe(false)
+    expect(hasUniqueCharsWithArray(unicodeString)).toBe(true)
   })
 })
