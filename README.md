@@ -54,3 +54,7 @@ Cada exercício é composto por dois arquivos:
 
 - `*.ts`: Contém o enunciado do exercício e a implementação da solução.
 - `*.test.ts`: Contém os testes para validar a solução.
+
+## Youtube Videos
+
+- [String com caracteres únicos](https://youtu.be/Xuj6FVO8g34)
