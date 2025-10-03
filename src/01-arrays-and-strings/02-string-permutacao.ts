@@ -17,14 +17,19 @@ export function isPermutationWithMap(a: string, b: string): boolean {
   }
 
   const frequency = new Map<string, number>()
-  for (const c of a) {
-    const total = frequency.get(c) ?? 0
-    frequency.set(c, total + 1)
+  for (const char of a) {
+    const total = frequency.get(char) ?? 0
+    frequency.set(char, total + 1)
   }
 
-  for (const c of b) {
-    const total = frequency.get(c) ?? 0
-    frequency.set(c, total - 1)
+  for (const char of b) {
+    const total = frequency.get(char) ?? 0
+    /**
+     * Podemos otimizar e retornar cedo caso o char atual não 
+     * existe no frequency map.
+     * Mas vou deixar sem otimizar por simplicidade.
+     */ 
+    frequency.set(char, total - 1)
   }
 
   return Array.from(frequency.values()).every((v) => v === 0)
