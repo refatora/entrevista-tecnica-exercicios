@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { hasUniqueCharsWithArray, hasUniqueCharsWithSet } from './01-string-has-unique-chars'
+import { hasUniqueCharsWithArray, hasUniqueCharsWithSet } from './01-string-com-caracteres-unicos'
 
 describe('exercicio-01: Determina se uma string contém apenas caracteres únicos', () => {
   it.each(['', ' ', 'a', 'abc', '123', 'aAbB'])(
