@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isPermutation } from './02-string-permutacao'
+import { isPermutationWithSort, isPermutationWithMap } from './02-string-permutacao'
 
 describe('exercicio-02: Determine se duas strings são permutação uma da outra', () => {
   it.each([
@@ -10,7 +10,8 @@ describe('exercicio-02: Determine se duas strings são permutação uma da outra
     { a: 'abcde', b: 'adebc' },
     { a: 'abba', b: 'bbaa' },
   ])('retorna true quando uma string é uma permutação da outra: [%s]', ({ a, b }) => {
-    expect(isPermutation(a, b)).toBe(true)
+    expect(isPermutationWithSort(a, b)).toBe(true)
+    expect(isPermutationWithMap(a, b)).toBe(true)
   })
 
   it.each([
@@ -20,6 +21,7 @@ describe('exercicio-02: Determine se duas strings são permutação uma da outra
     { a: 'abc', b: 'abca' },
     { a: ' ', b: '' },
   ])('retorna false quando uma string não é uma permutação da outra: [%s]', ({ a, b }) => {
-    expect(isPermutation(a, b)).toBe(false)
+    expect(isPermutationWithSort(a, b)).toBe(false)
+    expect(isPermutationWithMap(a, b)).toBe(false)
   })
 })
