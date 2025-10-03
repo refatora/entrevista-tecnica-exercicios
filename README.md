@@ -57,4 +57,4 @@ Cada exercício é composto por dois arquivos:
 
 ## Youtube Videos
 
-- [String com caracteres únicos](https://youtu.be/Xuj6FVO8g34)
+- [String com caracteres únicos](https://youtu.be/8CxxgxYOJvo)
