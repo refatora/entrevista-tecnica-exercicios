@@ -1,7 +1,7 @@
 /**
  * --- Enunciado do exercicio ---
  *
- * Implemente a functionalidae para determinar se uma string contém apenas caracteres únicos.
+ * Determinar se uma string contém apenas caracteres únicos.
  */
 
 /**
