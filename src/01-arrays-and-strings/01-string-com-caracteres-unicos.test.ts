@@ -18,13 +18,16 @@ describe('exercicio-01: Determina se uma string contém apenas caracteres único
     },
   )
 
-  it.fails('a abordagem com array falha para caracteres Unicode que compartilham o mesmo surrogate code unit', () => {
-    /**
-     * Estes emojis são diferentes, mas '😊'.charCodeAt(0) === '😂'.charCodeAt(0)
-     * A função com array irá incorretamente identificar uma duplicata.
-     * Este teste é marcado com .fails() para indicar que a falha é esperada.
-     */
-    const unicodeString = '😊😂'
-    expect(hasUniqueCharsWithArray(unicodeString)).toBe(true)
-  })
+  it.fails(
+    'a abordagem com array falha para caracteres Unicode que compartilham o mesmo surrogate code unit',
+    () => {
+      /**
+       * Estes emojis são diferentes, mas '😊'.charCodeAt(0) === '😂'.charCodeAt(0)
+       * A função com array irá incorretamente identificar uma duplicata.
+       * Este teste é marcado com .fails() para indicar que a falha é esperada.
+       */
+      const unicodeString = '😊😂'
+      expect(hasUniqueCharsWithArray(unicodeString)).toBe(true)
+    },
+  )
 })
