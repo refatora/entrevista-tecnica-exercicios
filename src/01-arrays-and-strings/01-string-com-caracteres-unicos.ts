@@ -13,9 +13,9 @@
  * - Caso contrário, o caractere é adicionado ao `Set` e a iteração continua.
  * Se o loop terminar sem encontrar duplicatas, a função retorna `true`.
  */
-export function hasUniqueCharsWithSet(inputString: string): boolean {
+export function hasUniqueCharsWithSet(str: string): boolean {
   const previous = new Set<string>()
-  for (const s of inputString) {
+  for (const s of str) {
     if (previous.has(s)) {
       return false
     }
@@ -36,9 +36,9 @@ export function hasUniqueCharsWithSet(inputString: string): boolean {
  *
  * Nota: Esta abordagem é eficiente, mas assume um conjunto de caracteres limitado (ex: UTF-16).
  */
-export function hasUniqueCharsWithArray(inputString: string): boolean {
+export function hasUniqueCharsWithArray(str: string): boolean {
   const previous: Array<boolean> = []
-  for (const s of inputString) {
+  for (const s of str) {
     const charCode = s.charCodeAt(0) // Veja: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
     const hasPrevious = previous[charCode]
     if (hasPrevious) {
