@@ -1,12 +1,12 @@
 export function isPalindromeTwoPointers(str: string): boolean {
   let left = 0
   let right = str.length - 1
-  do {
+  while (left < right) {
     if (str[left] !== str[right]) {
       return false
     }
     left++
     right--
-  } while (left < right)
+  }
   return true
 }

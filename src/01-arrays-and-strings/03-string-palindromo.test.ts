@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { isPalindromeTwoPointers } from './03-string-palindromo'
 
-describe('exercicio-01: Determina se uma string é um palindromo', () => {
+describe('exercicio-03: Determina se uma string é um palindromo', () => {
   it.each([
     '',
     '111',
