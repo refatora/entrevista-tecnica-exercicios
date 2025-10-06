@@ -14,7 +14,7 @@ describe('exercicio-02: Determine se duas strings são permutação uma da outra
     expect(isPermutationWithMap(a, b)).toBe(true)
   })
 
-  it.skip.each([
+  it.each([
     [' ', ''],
     ['a', 'b'],
     ['abc', 'def'],
