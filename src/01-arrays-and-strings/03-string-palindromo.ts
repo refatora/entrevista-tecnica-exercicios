@@ -23,7 +23,7 @@
  * Se o loop terminar sem encontrar caracteres diferentes, significa que a string é um palíndromo,
  * e a função retorna `true`.
  */
-export function isPalindromeTwoPointers(str: string): boolean {
+export function isPalindrome(str: string): boolean {
   let left = 0
   let right = str.length - 1
   while (left < right) {

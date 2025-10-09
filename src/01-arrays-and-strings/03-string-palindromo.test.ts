@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isPalindromeTwoPointers } from './03-string-palindromo'
+import { isPalindrome as isPalindrome } from './03-string-palindromo'
 
 describe('exercicio-03: Determina se uma string é um palindromo', () => {
   it.each([
@@ -20,7 +20,7 @@ describe('exercicio-03: Determina se uma string é um palindromo', () => {
     'rever',
     '!1!',
   ])('retorne true string é um palindromo: [%s]', (str) => {
-    expect(isPalindromeTwoPointers(str)).toBe(true)
+    expect(isPalindrome(str)).toBe(true)
   })
   it.each([
     '!111',
@@ -39,6 +39,6 @@ describe('exercicio-03: Determina se uma string é um palindromo', () => {
     '!rever',
     '!!1!',
   ])('retorne false string é um palindromo: [%s]', (str) => {
-    expect(isPalindromeTwoPointers(str)).toBe(false)
+    expect(isPalindrome(str)).toBe(false)
   })
 })
