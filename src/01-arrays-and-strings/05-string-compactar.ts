@@ -21,18 +21,17 @@ export function compact(str: string) {
   let current: string = str[0]
   let count: number = 0
 
-  for (const s of str) {
-    if (current === s) {
+  for (let i = 0; i <= str.length; i++) {
+    const char = str[i]
+    if (current === char) {
       count++
     } else {
       result.push(current)
       result.push(count)
-      current = s
+      current = char
       count = 1
     }
   }
-  result.push(current)
-  result.push(count)
 
   const resultStr = result.join('')
   return str.length <= resultStr.length ? str : resultStr
