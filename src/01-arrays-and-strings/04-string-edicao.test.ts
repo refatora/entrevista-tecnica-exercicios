@@ -22,12 +22,12 @@ describe(`exercicio-04: Determina se uma string tem 0 ou 1 edicao`, () => {
   })
 
   it.each([
-    ['1', ''],
-    ['12', '2'],
-    ['12', '1'],
-    ['123', '12'],
-    ['123', '13'],
-    ['123', '23'],
+    ['a', ''],
+    ['ab', 'a'],
+    ['ab', 'b'],
+    ['abc', 'ab'],
+    ['abc', 'ac'],
+    ['abc', 'bc'],
   ])('retorne 1 quando a segunda string tem um caractere removido: [%s, %s]', (a, b) => {
     expect(hasEdits(a, b)).toBe(1)
   })
