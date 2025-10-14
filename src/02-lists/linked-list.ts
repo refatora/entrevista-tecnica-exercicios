@@ -22,8 +22,8 @@ class Node<T> {
  * em ambas as direções (para frente e para trás).
  */
 export class List<T> {
-  private head: Node<T> | null = null
-  private tail: Node<T> | null = null
+  protected head: Node<T> | null = null
+  protected tail: Node<T> | null = null
 
   /**
    * Cria uma nova instância da lista.
