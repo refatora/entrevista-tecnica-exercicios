@@ -1,21 +1,21 @@
 import { describe, expect, it } from 'vitest'
-import { List } from './linked-list'
+import { Stack } from './stack'
 
-describe('exercicio-01: Implemente uma linked list', () => {
+describe('exercicio-01: Implemente uma pilha utilizando uma lista encadeada', () => {
   it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]]])(
     'inicializar com array: [%s]',
     (init) => {
-      const list = new List(init)
-      expect(list.toArray()).toStrictEqual(init)
+      const list = new Stack(init)
+      expect(list.toArray()).toStrictEqual(init.reverse())
     },
   )
 
   it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]]])(
     'push: [%s]',
     (init) => {
-      const list = new List()
+      const list = new Stack()
       init.forEach((v) => list.push(v))
-      expect(list.toArray()).toStrictEqual(init)
+      expect(list.toArray()).toStrictEqual(init.reverse())
     },
   )
 
@@ -25,10 +25,10 @@ describe('exercicio-01: Implemente uma linked list', () => {
     [[1, 1], 1, [1]],
     [[1, 2], 2, [1]],
     [[2, 2], 2, [2]],
-    [[1, 2, 3], 3, [1, 2]],
-    [[1, 2, 2, 3], 3, [1, 2, 2]],
+    [[1, 2, 3], 3, [2, 1]],
+    [[1, 2, 2, 3], 3, [2, 2, 1]],
   ])('pop: %j %s %j', (init, value, arr) => {
-    const list = new List(init)
+    const list = new Stack(init)
     expect(list.pop()).toBe(value)
     expect(list.toArray()).toStrictEqual(arr)
   })
