@@ -9,17 +9,16 @@
  * Abordagem de Iteração e Contagem:
  *
  * Esta função itera pela string para contar caracteres consecutivos.
- * Ela mantém um `prev` (caractere atual) e um `count` (contador).
- * Quando o caractere muda, o `prev` e seu `count` são adicionados a um array `result`.
- * Ao final do loop, o último grupo de caracteres também é adicionado.
+ * Ela mantém um `prev` (caractere anterior) e um `count` (contador).
+ * Quando a sequencia muda, o `prev` e seu `count` são adicionados a um array `result`.
  * A string compactada é formada pela junção dos elementos do array `result`.
  */
 export function compact(str: string) {
   let result: Array<string | number> = []
   let prev: string = str[0]
-  let count: number = 0
+  let count: number = 1
 
-  for (let i = 0; i <= str.length; i++) {
+  for (let i = 1; i <= str.length; i++) {
     const current = str[i]
     if (prev === current) {
       count++
