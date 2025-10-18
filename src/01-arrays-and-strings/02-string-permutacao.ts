@@ -40,11 +40,13 @@ export function isPermutationWithSort(a: string, b: string): boolean {
  * A lógica é a seguinte:
  * 1. Se as strings tiverem comprimentos diferentes, não podem ser permutações, então retorna `false`.
  * 2. Um mapa (`frequency`) é criado para armazenar a contagem de cada caractere da primeira string (`a`).
- * 3. A função itera sobre a segunda string (`b`). Para cada caractere, decrementa a contagem no mapa.
- * 4. Após a iteração, se as strings forem permutações, o mapa deve conter apenas valores zero para todas as chaves.
- * 5. A função `every()` verifica se todos os valores no mapa são `0`.
+ * 3. A função itera sobre a segunda string (`b`). Para cada caractere:
+ *    - A contagem do caractere no mapa é decrementada.
+ *    - Se a contagem se tornar negativa, ou se o caractere não existir no mapa,
+ *      significa que `b` não é uma permutação de `a`, e a função retorna `false` imediatamente.
+ * 4. Se o loop terminar sem retornar `false`, significa que as strings são permutações.
  *
- * Esta abordagem é eficiente em termos de tempo, especialmente para strings longas,
+ * Esta abordagem é eficiente em termos de tempo (O(N)), especialmente para strings longas,
  * pois evita o custo da ordenação.
  */
 export function isPermutationWithMap(a: string, b: string): boolean {
@@ -59,14 +61,14 @@ export function isPermutationWithMap(a: string, b: string): boolean {
   }
 
   for (const char of b) {
-    const total = frequency.get(char) ?? 0
-    /**
-     * Podemos otimizar e retornar cedo caso o char atual não
-     * existe no frequency map.
-     * Mas vou deixar sem otimizar por simplicidade.
-     */
+    const total = frequency.get(char)
+    // Se o caractere de `b` não existe em `a` ou se a frequência se tornaria negativa,
+    // então não é uma permutação.
+    if (!total) {
+      return false
+    }
     frequency.set(char, total - 1)
   }
 
-  return Array.from(frequency.values()).every((v) => v === 0)
+  return true
 }

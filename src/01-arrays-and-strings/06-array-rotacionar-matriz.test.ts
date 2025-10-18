@@ -41,7 +41,7 @@ describe('exercicio-06: Rotacionar matriz em 90 graus', () => {
       ],
     ],
   ])(
-    'retorne true quando a string contém apenas caracteres únicos: [%j, %j]',
+    'deve rotacionar a matriz em 90 graus: [%j, %j]',
     (given, expected) => {
       expect(rotateMatrixCloning(given)).toStrictEqual(expected)
       expect(rotateMatrixInPlace(given)).toStrictEqual(expected)

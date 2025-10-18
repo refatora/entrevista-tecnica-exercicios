@@ -17,7 +17,7 @@ describe(`exercicio-04: Determina se uma string tem 0 ou 1 edicao`, () => {
     ['abc', 'xbc'],
     ['abc', 'axc'],
     ['abc', 'abx'],
-  ])('retorne 1 quando a segund string tem um caractere substituido: [%s, %s]', (a, b) => {
+  ])('retorne 1 quando a segunda string tem um caractere substituido: [%s, %s]', (a, b) => {
     expect(hasEdits(a, b)).toBe(1)
   })
 
