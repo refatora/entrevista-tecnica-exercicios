@@ -4,9 +4,11 @@ import { compact } from './05-string-compactar'
 describe('exercicio-05: Compactar string', () => {
   it.each([
     ['', ''],
+    ['a', 'a1'],
+    ['ab', 'a1b1'],
     ['aaa', 'a3'],
     ['aaabbb', 'a3b3'],
-    ['aabbcccdddde', 'a2b2c3d4e1'],
+    ['aaabbcccbbb', 'a3b2c3b3'],
   ])('retorne a string compactada: [%s]', (input, expected) => {
     expect(compact(input)).toBe(expected)
   })
