@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { Stack } from './stack'
+import { Stack } from './01-stack'
 
 describe('exercicio-01: Implemente uma pilha utilizando uma lista encadeada', () => {
   it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]]])(
