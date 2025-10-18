@@ -4,10 +4,9 @@
  * Escreva um código para remover os elementos duplicados de uma lista encadeada
  * não ordenada.
  */
-import { Stack } from './01-stack'
-import type { Node } from './01-stack'
+import { LinkedList, Node } from './02-linked-list'
 
-export class LinkedListRemoveDuplicates<T> extends Stack<T> {
+export class LinkedListRemoveDuplicates<T> extends LinkedList<T> {
   /**
    * --- Abordagem com a estrutura de dados Set ---
    *
