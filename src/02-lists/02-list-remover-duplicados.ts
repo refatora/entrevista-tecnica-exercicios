@@ -4,7 +4,7 @@
  * Escreva um código para remover os elementos duplicados de uma lista encadeada
  * não ordenada.
  */
-import { LinkedList, Node } from './02-linked-list'
+import { LinkedList, Node } from './01-linked-list'
 
 export class LinkedListRemoveDuplicates<T> extends LinkedList<T> {
   /**

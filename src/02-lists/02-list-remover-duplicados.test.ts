@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { LinkedListRemoveDuplicates } from './03-list-remover-duplicados'
+import { LinkedListRemoveDuplicates } from './02-list-remover-duplicados'
 
 describe('exercicio-03: Remova valores duplicados em uma lista encadeada', () => {
   it.each([
