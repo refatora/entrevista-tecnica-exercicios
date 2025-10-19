@@ -22,17 +22,10 @@ describe('exercicio-03: Determina se uma string é um palindromo', () => {
   ])('retorne true quando a string é um palíndromo: [%s]', (str) => {
     expect(isPalindrome(str)).toBe(true)
   })
-  it.each([
-    'ab',
-    'abc',
-    'abca',
-    '123',
-    'aab',
-    'bba',
-    'not a palindrome',
-    '!111',
-    '!!1!',
-  ])('retorne false quando a string não é um palíndromo: [%s]', (str) => {
-    expect(isPalindrome(str)).toBe(false)
-  })
+  it.each(['ab', 'abc', 'abca', '123', 'aab', 'bba', 'not a palindrome', '!111', '!!1!'])(
+    'retorne false quando a string não é um palíndromo: [%s]',
+    (str) => {
+      expect(isPalindrome(str)).toBe(false)
+    },
+  )
 })

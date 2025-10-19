@@ -40,11 +40,8 @@ describe('exercicio-06: Rotacionar matriz em 90 graus', () => {
         [16, 12, 8, 4],
       ],
     ],
-  ])(
-    'deve rotacionar a matriz em 90 graus: [%j, %j]',
-    (given, expected) => {
-      expect(rotateMatrixCloning(given)).toStrictEqual(expected)
-      expect(rotateMatrixInPlace(given)).toStrictEqual(expected)
-    },
-  )
+  ])('deve rotacionar a matriz em 90 graus: [%j, %j]', (given, expected) => {
+    expect(rotateMatrixCloning(given)).toStrictEqual(expected)
+    expect(rotateMatrixInPlace(given)).toStrictEqual(expected)
+  })
 })

@@ -17,10 +17,10 @@ export class LinkedList<T> {
   protected head: Node<T> | null = null
 
   constructor(values: ReadonlyArray<T> = []) {
-    values.forEach((value) => this.push(value))
+    values.forEach((value) => this.add(value))
   }
 
-  push(value: T): void {
+  add(value: T): void {
     if (this.head === null) {
       this.head = new Node(value)
     } else {

@@ -14,7 +14,7 @@ describe('exercicio-02: Implemente uma lista encadeada', () => {
     'push: [%s]',
     (init) => {
       const list = new LinkedList()
-      init.forEach((v) => list.push(v))
+      init.forEach((v) => list.add(v))
       expect(list.toArray()).toStrictEqual(init)
     },
   )
