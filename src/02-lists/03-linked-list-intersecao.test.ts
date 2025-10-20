@@ -1,6 +1,4 @@
 import { describe, expect, it } from 'vitest'
-import { template } from './00-x-template'
-import { LinkedList } from './01-linked-list'
 import { LinkedListIntersection } from './03-linked-list-intersecao'
 
 type NamedObj = { name: string }
