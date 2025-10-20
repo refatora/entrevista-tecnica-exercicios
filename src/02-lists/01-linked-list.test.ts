@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { LinkedList } from './01-linked-list'
 
-describe('exercicio-02: Implemente uma lista encadeada', () => {
+describe('exercicio-01: Implemente uma lista encadeada', () => {
   it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]]])(
     'inicializar com array: [%s]',
     (init) => {
