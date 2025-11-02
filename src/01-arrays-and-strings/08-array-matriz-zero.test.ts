@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { zeroMatrix } from './07-array-matriz-zero'
+import { zeroMatrix } from './08-array-matriz-zero'
 
 describe('exercicio-07: Preencha a coluna e linha de uma matrix onde um element é zero', () => {
   it.each([
