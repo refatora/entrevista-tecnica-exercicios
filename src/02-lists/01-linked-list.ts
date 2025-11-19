@@ -23,32 +23,34 @@ export class LinkedList<T> {
   add(value: T): void {
     if (this.head === null) {
       this.head = new Node(value)
-    } else {
-      let last = this.head
-      while (last.next != null) {
-        last = last.next
-      }
-      last.next = new Node(value)
+      return
     }
+    let curr = this.head
+    while (curr.next != null) {
+      curr = curr.next
+    }
+    curr.next = new Node(value)
   }
 
-  pop(): T | undefined {
+  del(index: number): void {
     if (this.head === null) {
-      return undefined
+      return
     }
-    if (this.head.next === null) {
-      const value = this.head.value
-      this.head = null
-      return value
+    if (index === 0) {
+      this.head = this.head.next
+      return
     }
-    let secondLast: Node<T> | null = null
-    let last = this.head
-    while (last.next !== null) {
-      secondLast = last
-      last = last.next
+    let curr = this.head
+    let prev: Node<T> | null = null
+    let i = 0
+    while (curr.next !== null && i < index) {
+      prev = curr
+      curr = curr.next
+      i++
     }
-    secondLast!.next = null
-    return last.value
+    if (prev !== null) {
+      prev.next = curr.next
+    }
   }
 
   /**

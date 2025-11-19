@@ -11,7 +11,7 @@ describe('exercicio-01: Implemente uma lista encadeada', () => {
   )
 
   it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]]])(
-    'push: [%s]',
+    'add: [%s]',
     (init) => {
       const list = new LinkedList()
       init.forEach((v) => list.add(v))
@@ -20,16 +20,14 @@ describe('exercicio-01: Implemente uma lista encadeada', () => {
   )
 
   it.each([
-    [[], undefined, []],
-    [[1], 1, []],
-    [[1, 1], 1, [1]],
-    [[1, 2], 2, [1]],
-    [[2, 2], 2, [2]],
-    [[1, 2, 3], 3, [1, 2]],
-    [[1, 2, 2, 3], 3, [1, 2, 2]],
-  ])('pop: %j %s %j', (init, value, arr) => {
-    const list = new LinkedList(init)
-    expect(list.pop()).toBe(value)
-    expect(list.toArray()).toStrictEqual(arr)
+    { init: [], index: 0, expected: [] },
+    { init: [0], index: 0, expected: [] },
+    { init: [0, 1, 2], index: 0, expected: [1, 2] },
+    { init: [0, 1, 2], index: 1, expected: [0, 2] },
+    { init: [0, 1, 2], index: 2, expected: [0, 1] },
+  ])('del: %j %s %j', ({ init, index, expected }) => {
+    const list = new LinkedList<number>(init)
+    list.del(index)
+    expect(list.toArray()).toStrictEqual(expected)
   })
 })
