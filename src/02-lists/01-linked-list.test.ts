@@ -25,6 +25,8 @@ describe('exercicio-01: Implemente uma lista encadeada', () => {
     { init: [0, 1, 2], index: 0, expected: [1, 2] },
     { init: [0, 1, 2], index: 1, expected: [0, 2] },
     { init: [0, 1, 2], index: 2, expected: [0, 1] },
+    { init: [0, 1, 2], index: 100, expected: [0, 1, 2] },
+    { init: [0, 1, 2], index: -100, expected: [0, 1, 2] },
   ])('del: %j %s %j', ({ init, index, expected }) => {
     const list = new LinkedList<number>(init)
     list.del(index)
