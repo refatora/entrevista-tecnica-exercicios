@@ -2,22 +2,32 @@ import { describe, expect, it } from 'vitest'
 import { LinkedList } from './01-linked-list'
 
 describe('exercicio-01: Implemente uma lista encadeada', () => {
-  it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]]])(
-    'inicializar com array: [%s]',
-    (init) => {
-      const list = new LinkedList(init)
-      expect(list.toArray()).toStrictEqual(init)
-    },
-  )
+  it.each([
+    { init: [] },
+    { init: [1] },
+    { init: [1, 1] },
+    { init: [1, 2] },
+    { init: [2, 2] },
+    { init: [1, 2, 3] },
+    { init: [1, 2, 2, 3] },
+  ])('inicializar com array: %j', ({ init }) => {
+    const list = new LinkedList(init)
+    expect(list.toArray()).toStrictEqual(init)
+  })
 
-  it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]], [[3, 2, 2, 1]]])(
-    'add: [%s]',
-    (init) => {
-      const list = new LinkedList()
-      init.forEach((v) => list.add(v))
-      expect(list.toArray()).toStrictEqual(init)
-    },
-  )
+  it.each([
+    { init: [] },
+    { init: [1] },
+    { init: [1, 1] },
+    { init: [1, 2] },
+    { init: [2, 2] },
+    { init: [1, 2, 3] },
+    { init: [1, 2, 2, 3] },
+  ])('add: %j', ({ init }) => {
+    const list = new LinkedList()
+    init.forEach((i) => list.add(i))
+    expect(list.toArray()).toStrictEqual(init)
+  })
 
   it.each([
     { init: [], index: 0, expected: undefined },

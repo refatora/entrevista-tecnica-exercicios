@@ -1,8 +1,7 @@
 export class Node<T> {
-  constructor(
-    public value: T,
-    public next: Node<T> | null = null,
-  ) { }
+  public next: Node<T> | null = null
+
+  constructor(public value: T) {}
 }
 
 export class LinkedList<T> {
@@ -35,10 +34,9 @@ export class LinkedList<T> {
       current = current.next
       i++
     }
-    
+
     return current?.value
   }
-
 
   del(index: number): void {
     if (this.head === null || index < 0) {
