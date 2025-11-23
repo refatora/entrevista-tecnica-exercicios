@@ -10,7 +10,7 @@ describe('exercicio-01: Implemente uma lista encadeada', () => {
     },
   )
 
-  it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]]])(
+  it.each([[[]], [[1]], [[1, 1]], [[1, 2]], [[2, 2]], [[1, 2, 3]], [[1, 2, 2, 3]], [[3, 2, 2, 1]]])(
     'add: [%s]',
     (init) => {
       const list = new LinkedList()
@@ -20,6 +20,20 @@ describe('exercicio-01: Implemente uma lista encadeada', () => {
   )
 
   it.each([
+    { init: [], index: 0, expected: undefined },
+    { init: [0], index: 0, expected: 0 },
+    { init: [0, 1, 2], index: 0, expected: 0 },
+    { init: [0, 1, 2], index: 1, expected: 1 },
+    { init: [0, 1, 2], index: 2, expected: 2 },
+    { init: [10, 11, 12], index: 1, expected: 11 },
+    { init: [0, 1, 2], index: 100, expected: undefined },
+    { init: [0, 1, 2], index: -100, expected: undefined },
+  ])('get: %j', ({ init, index, expected }) => {
+    const list = new LinkedList<number>(init)
+    expect(list.get(index)).toStrictEqual(expected)
+  })
+
+  it.each([
     { init: [], index: 0, expected: [] },
     { init: [0], index: 0, expected: [] },
     { init: [0, 1, 2], index: 0, expected: [1, 2] },
@@ -27,7 +41,7 @@ describe('exercicio-01: Implemente uma lista encadeada', () => {
     { init: [0, 1, 2], index: 2, expected: [0, 1] },
     { init: [0, 1, 2], index: 100, expected: [0, 1, 2] },
     { init: [0, 1, 2], index: -100, expected: [0, 1, 2] },
-  ])('del: %j %s %j', ({ init, index, expected }) => {
+  ])('del: %j', ({ init, index, expected }) => {
     const list = new LinkedList<number>(init)
     list.del(index)
     expect(list.toArray()).toStrictEqual(expected)
