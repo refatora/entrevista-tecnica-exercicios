@@ -61,6 +61,10 @@ export class LinkedList<T> {
     }
   }
 
+  peak(): Node<T> | null {
+    return this.head
+  }
+
   toArray(): Array<T> {
     let node = this.head
     const result: Array<T> = []
