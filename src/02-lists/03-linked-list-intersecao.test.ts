@@ -8,7 +8,7 @@ const c = { name: 'c' }
 const d = { name: 'd' }
 const e = { name: 'e' }
 
-describe('exercicio-03: Encontre a interseção em uma lista encadead', () => {
+describe('exercicio-03: Encontre a interseção entre duas listas encadeada com funcao de igualdade', () => {
   it.each([
     { left: [a, b, c], right: [d, e], intersection: [] },
     { left: [a, b, c], right: [d, a, e], intersection: [a] },

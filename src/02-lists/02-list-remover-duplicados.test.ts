@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { DelDuplicatesLinkedList } from './02-list-remover-duplicados'
 
-describe.skip('exercicio-02: Remova valores duplicados em uma lista encadeada', () => {
+describe('exercicio-02: Remova valores duplicados em uma lista encadeada', () => {
   it.each([
     { init: [], expected: [] },
     { init: [1], expected: [1] },

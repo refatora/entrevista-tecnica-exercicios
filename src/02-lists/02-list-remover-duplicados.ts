@@ -5,15 +5,18 @@ export class DelDuplicatesLinkedList<T> extends LinkedList<T> {
     if (this.head === null) {
       return
     }
-    const visited = new Set<T>([this.head.value])
-    const curr: Node<T> | null = this.head
-    while (curr.next !== null) {
-      if (visited.has(curr.next.value)) {
-        curr.next = curr.next.next
+    const visited = new Set<T>()
+    let pre: Node<T> | null = null
+    let cur: Node<T> | null = this.head
+    while (cur !== null) {
+      if (visited.has(cur.value)) {
+        pre!.next = cur.next
+        cur = cur.next
         continue
       }
-      visited.add(curr.value)
-      curr.next = curr.next.next
+      visited.add(cur.value)
+      pre = cur
+      cur.next = cur.next
     }
   }
 }
